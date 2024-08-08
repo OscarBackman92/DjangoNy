@@ -1,1 +1,0 @@
-console.log("life, the universe and everything!");
