@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-5">
@@ -28,8 +29,13 @@
                 I'm excited to hear from you. Fill out the form
                 and we can get the ball rolling!</p>
 
-            <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
+            <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
+            <form method="post">
+                {{ collaborate_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary"
+                  type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
